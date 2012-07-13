@@ -2,6 +2,7 @@
 
 namespace Stampie\Extra;
 
+use Stampie\Extra\Event\MessageEvent;
 use Stampie\MailerInterface;
 use Stampie\MessageInterface;
 use Stampie\Adapter\AdapterInterface;
@@ -28,7 +29,10 @@ class Mailer implements MailerInterface
      */
     public function send(MessageInterface $message)
     {
-        return $this->delegate->send($message);
+        $event = new MessageEvent($message);
+        $this->dispatcher->dispatch(StampieEvents::PRE_SEND, $event);
+
+        return $this->delegate->send($event->getMessage());
     }
 
     /**

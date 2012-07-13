@@ -3,6 +3,7 @@
 namespace Stampie\Extra\Tests;
 
 use Stampie\Extra\Mailer;
+use Stampie\Extra\StampieEvents;
 
 class MailerTest extends \PHPUnit_Framework_TestCase
 {
@@ -80,6 +81,10 @@ class MailerTest extends \PHPUnit_Framework_TestCase
             ->method('send')
             ->with($this->equalTo($message))
             ->will($this->returnValue(true));
+
+        $this->dispatcher->expects($this->once())
+            ->method('dispatch')
+            ->with($this->equalTo(StampieEvents::PRE_SEND), $this->isInstanceOf('Stampie\Extra\Event\MessageEvent'));
 
         $this->assertTrue($this->mailer->send($message));
     }
