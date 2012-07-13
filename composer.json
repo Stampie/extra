@@ -1,0 +1,23 @@
+{
+    "name" : "stof/stampie-extra",
+    "description" : "Event-based plugin for henrikbjorn/stampie",
+    "homepage" : "https://github.com/stof/StampieExtra",
+    "type" : "library",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Christophe Coevoet",
+            "email" : "stof@notk.org"
+        }
+    ],
+    "autoload" : {
+        "psr-0" : {
+            "Stampie\\Extra": "src/"
+        }
+    },
+    "require" : {
+        "php": ">=5.3.3",
+        "henrikbjorn/stampie": "*",
+        "symfony/event-dispatcher": ">=2.0,<2.2-dev"
+    }
+}
