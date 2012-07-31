@@ -7,7 +7,7 @@ It uses the Symfony2 EventDispatcher component.
 
 ## Usage
 
-the StampieExtra mailer wraps your Stampie mailer to provides extension points
+The StampieExtra mailer wraps your Stampie mailer to provides extension points
 in the sendign process.
 
 ``` php
@@ -42,6 +42,26 @@ development to send all messages to a single email address. It will add a
 ``` php
 <?php
 $dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\ImpersonateListener('stof@notk.org'));
+```
+
+## SpoolMailer
+
+StampieExtra also provides a SpoolMailer storing the messages in memory and
+sending them when flushing the queue.
+
+```php
+<?php
+
+$mailer = // Create your mailer...
+$spoolMailer = new Stampie\Extra\SpoolMailer($mailer);
+
+$message = // Create your Stampie message...
+$spoolMailer->send($message);
+
+// Do some logic, for instance flushing the response to the user
+
+// Flush the queue, sending the message with the inner mailer
+$spoolMailer->flushQueue();
 ```
 
 ## Testing

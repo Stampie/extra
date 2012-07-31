@@ -5,7 +5,6 @@ namespace Stampie\Extra;
 use Stampie\Extra\Event\MessageEvent;
 use Stampie\MailerInterface;
 use Stampie\MessageInterface;
-use Stampie\Adapter\AdapterInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -13,14 +12,14 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class Mailer implements MailerInterface
+class Mailer extends DecoratorMailer
 {
-    private $delegate;
     private $dispatcher;
 
     public function __construct(MailerInterface $delegate, EventDispatcherInterface $dispatcher)
     {
-        $this->delegate = $delegate;
+        parent::__construct($delegate);
+
         $this->dispatcher = $dispatcher;
     }
 
@@ -32,38 +31,6 @@ class Mailer implements MailerInterface
         $event = new MessageEvent($message);
         $this->dispatcher->dispatch(StampieEvents::PRE_SEND, $event);
 
-        return $this->delegate->send($event->getMessage());
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setAdapter(AdapterInterface $adapter)
-    {
-        $this->delegate->setAdapter($adapter);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAdapter()
-    {
-        return $this->delegate->getAdapter();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setServerToken($serverToken)
-    {
-        $this->delegate->setServerToken($serverToken);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getServerToken()
-    {
-        return $this->delegate->getServerToken();
+        return parent::send($event->getMessage());
     }
 }

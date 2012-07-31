@@ -3,7 +3,6 @@
 namespace Stampie\Extra\Message;
 
 use Stampie\MessageInterface;
-use Stampie\Adapter\AdapterInterface;
 
 /**
  * MessageInterface decorator changing the recipient.
