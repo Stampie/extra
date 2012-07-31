@@ -19,5 +19,11 @@
         "php": ">=5.3.3",
         "henrikbjorn/stampie": ">=0.5",
         "symfony/event-dispatcher": ">=2.0,<2.2-dev"
+    },
+    "require-dev": {
+        "symfony/http-kernel": ">=2.0,<2.2-dev"
+    },
+    "suggest": {
+        "symfony/http-kernel": "to log sent emails to a LoggerInterface"
     }
 }

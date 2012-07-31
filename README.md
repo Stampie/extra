@@ -10,7 +10,7 @@ It uses the Symfony2 EventDispatcher component.
 The StampieExtra mailer wraps your Stampie mailer to provides extension points
 in the sendign process.
 
-``` php
+```php
 <?php
 
 // include the Composr autoloading
@@ -38,10 +38,23 @@ The ImpersonateListener allows you to replace the recipient of the mail during
 development to send all messages to a single email address. It will add a
 `X-Stampie-To` header containing the original recipient.
 
-
-``` php
+```php
 <?php
 $dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\ImpersonateListener('stof@notk.org'));
+```
+
+### LoggerListener
+
+The LoggerListener allows you to log sent emails. It expects a logger implementing
+the Symfony2 LoggerInterface.
+
+```php
+<?php
+// create a listener and configure it
+$logger = new Symfony\Bridge\Monolog\Logger('stampie');
+// ...
+
+$dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\LoggerListener($logger));
 ```
 
 ## SpoolMailer
