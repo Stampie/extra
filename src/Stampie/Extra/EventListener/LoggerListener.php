@@ -4,7 +4,7 @@ namespace Stampie\Extra\EventListener;
 
 use Stampie\Extra\StampieEvents;
 use Stampie\Extra\Event\MessageEvent;
-use Stampie\Extra\Util\IdentityUtils;
+use Stampie\Util\IdentityUtils;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Log\LoggerInterface;
 
@@ -39,7 +39,7 @@ class LoggerListener implements EventSubscriberInterface
         $message = $event->getMessage();
 
         $this->logger->debug(
-            sprintf('Sending an email from "%s" to "%s"', IdentityUtils::formatIdentities($message->getFrom()), IdentityUtils::formatIdentities($message->getTo())),
+            sprintf('Sending an email from "%s" to "%s"', IdentityUtils::buildIdentityString($message->getFrom()), IdentityUtils::buildIdentityString($message->getTo())),
             array('subject' => $message->getSubject(), 'headers' => $message->getHeaders())
         );
     }

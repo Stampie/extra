@@ -3,7 +3,7 @@
 namespace Stampie\Extra\Message;
 
 use Stampie\MessageInterface;
-use Stampie\Extra\Util\IdentityUtils;
+use Stampie\Util\IdentityUtils;
 
 /**
  * MessageInterface decorator changing the recipient.
@@ -36,7 +36,7 @@ class ImpersonateMessage extends Decorator
     {
         return array_merge(
             $this->delegate->getHeaders(),
-            array('X-Stampie-To' => IdentityUtils::formatIdentities($this->delegate->getTo()))
+            array('X-Stampie-To' => IdentityUtils::buildIdentityString($this->delegate->getTo()))
         );
     }
 }
