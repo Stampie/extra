@@ -3,6 +3,7 @@
 namespace Stampie\Extra\Message;
 
 use Stampie\MessageInterface;
+use Stampie\Message\TaggableInterface;
 
 /**
  * MessageInterface decorator proxying all calls without extra logic.
@@ -11,7 +12,7 @@ use Stampie\MessageInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class Decorator implements MessageInterface
+class Decorator implements MessageInterface, TaggableInterface
 {
     protected $delegate;
 
@@ -90,5 +91,17 @@ class Decorator implements MessageInterface
     public function getText()
     {
         return $this->delegate->getText();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTag()
+    {
+        if ($this->delegate instanceof TaggableInterface) {
+            return $this->delegate->getTag();
+        }
+
+        return array();
     }
 }
