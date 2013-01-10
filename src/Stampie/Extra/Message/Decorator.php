@@ -3,6 +3,7 @@
 namespace Stampie\Extra\Message;
 
 use Stampie\MessageInterface;
+use Stampie\Message\MetadataAwareInterface;
 use Stampie\Message\TaggableInterface;
 
 /**
@@ -12,7 +13,7 @@ use Stampie\Message\TaggableInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class Decorator implements MessageInterface, TaggableInterface
+class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInterface
 {
     protected $delegate;
 
@@ -100,6 +101,18 @@ class Decorator implements MessageInterface, TaggableInterface
     {
         if ($this->delegate instanceof TaggableInterface) {
             return $this->delegate->getTag();
+        }
+
+        return array();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMetadata()
+    {
+        if ($this->delegate instanceof MetadataAwareInterface) {
+            return $this->delegate->getMetadata();
         }
 
         return array();
