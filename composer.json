@@ -18,13 +18,18 @@
     "minimum-stability": "dev",
     "require" : {
         "php": ">=5.3.3",
-        "henrikbjorn/stampie": ">=0.6",
-        "symfony/event-dispatcher": ">=2.0,<2.2-dev"
+        "henrikbjorn/stampie": "~0.6",
+        "symfony/event-dispatcher": "~2.0"
     },
     "require-dev": {
         "symfony/http-kernel": ">=2.0,<2.2-dev"
     },
     "suggest": {
         "symfony/http-kernel": "to log sent emails to a LoggerInterface"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
     }
 }
