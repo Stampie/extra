@@ -2,7 +2,6 @@
 
 namespace Stampie\Extra\Message;
 
-use Stampie\Message\AttachmentsAwareInterface;
 use Stampie\MessageInterface;
 use Stampie\Util\IdentityUtils;
 
@@ -11,7 +10,7 @@ use Stampie\Util\IdentityUtils;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class ImpersonateMessage extends Decorator implements AttachmentsAwareInterface
+class ImpersonateMessage extends Decorator
 {
     private $recipient;
 
@@ -35,15 +34,6 @@ class ImpersonateMessage extends Decorator implements AttachmentsAwareInterface
     public function getBcc()
     {
         return null;
-    }
-
-    public function getAttachments()
-    {
-        if ($this->delegate instanceof AttachmentsAwareInterface) {
-            return $this->delegate->getAttachments();
-        }
-
-        return array();
     }
 
     public function getHeaders()
