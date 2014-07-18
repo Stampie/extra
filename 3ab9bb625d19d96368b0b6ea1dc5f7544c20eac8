@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------
+
+by stof at 2014-07-18T08:19:40Z
+
+the requirement should be updated to ``~0.10`` as we will depend on the new tag anyway, not on 0.7 (0.7 will never contain the new interface)
+
+---------------------------------------------------------------------------
+
+by stof at 2014-07-18T08:20:17Z
+
+you need to implement the interface in ImpersonateMessage, not only adding the method of the interface in the class. Otherwise it won't work.
+
+---------------------------------------------------------------------------
+
+by Ninir at 2014-07-18T08:23:26Z
+
+@stof Sure, because of this https://github.com/henrikbjorn/Stampie/blob/master/lib/Stampie/Mailer/Mandrill.php#L78-L80 :)
+
+---------------------------------------------------------------------------
+
+by stof at 2014-07-18T08:29:38Z
+
+@Ninir Please put this logic in the Decorator base class instead (it is part of building a message decorator, not specific to impersonating)
+
+---------------------------------------------------------------------------
+
+by Ninir at 2014-07-18T08:51:29Z
+
+@stof The tag was released!
