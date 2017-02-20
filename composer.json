@@ -19,7 +19,7 @@
     "require" : {
         "php": ">=5.3.3",
         "henrikbjorn/stampie": "~0.10",
-        "symfony/event-dispatcher": "~2.0"
+        "symfony/event-dispatcher": "^2.3 || ^3.0"
     },
     "require-dev": {
         "psr/log": "^1.0"
