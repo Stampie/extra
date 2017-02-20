@@ -15,6 +15,11 @@
             "Stampie\\Extra": "src/"
         }
     },
+    "autoload-dev" : {
+        "psr-0" : {
+            "Stampie\\Extra\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "require" : {
         "php": ">=5.3.3",
