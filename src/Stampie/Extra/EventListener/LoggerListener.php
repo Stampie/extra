@@ -2,11 +2,11 @@
 
 namespace Stampie\Extra\EventListener;
 
+use Psr\Log\LoggerInterface;
 use Stampie\Extra\StampieEvents;
 use Stampie\Extra\Event\MessageEvent;
 use Stampie\Util\IdentityUtils;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Log\LoggerInterface;
 
 /**
  * Listener responsible to log the sent emails.

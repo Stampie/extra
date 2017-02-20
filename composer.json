@@ -22,14 +22,14 @@
         "symfony/event-dispatcher": "~2.0"
     },
     "require-dev": {
-        "symfony/http-kernel": ">=2.0,<2.2-dev"
+        "psr/log": "^1.0"
     },
     "suggest": {
-        "symfony/http-kernel": "to log sent emails to a LoggerInterface"
+        "psr/log": "to log sent emails to a LoggerInterface"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2.x-dev"
+            "dev-master": "0.3.x-dev"
         }
     }
 }
