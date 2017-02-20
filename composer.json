@@ -22,7 +22,8 @@
         "symfony/event-dispatcher": "^2.3 || ^3.0"
     },
     "require-dev": {
-        "psr/log": "^1.0"
+        "psr/log": "^1.0",
+        "symfony/phpunit-bridge": "^3.2"
     },
     "suggest": {
         "psr/log": "to log sent emails to a LoggerInterface"
