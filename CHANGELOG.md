@@ -1,6 +1,7 @@
 ## 0.3.0
 
 * Switch to PSR-3 for the logger listener rather than the deprecated Symfony logger
+* Add support for Symfony 3
 
 ## 0.2.0 (2014-07-18)
 
