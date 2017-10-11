@@ -30,6 +30,8 @@ before_install:
 
 install: composer update --prefer-dist $COMPOSER_FLAGS
 
+before_script: phpunit --version
+
 script: phpunit -v --coverage-clover=coverage.clover
 
 after_script:
