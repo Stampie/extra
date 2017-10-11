@@ -32,9 +32,7 @@ before_install:
 
 install: composer update --prefer-dist $COMPOSER_FLAGS
 
-before_script: phpunit --version
-
-script: phpunit -v --coverage-clover=coverage.clover
+script: vendor/bin/phpunit -v --coverage-clover=coverage.clover
 
 after_script:
     - wget https://scrutinizer-ci.com/ocular.phar
