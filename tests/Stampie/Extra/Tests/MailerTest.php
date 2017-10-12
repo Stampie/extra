@@ -30,26 +30,15 @@ class MailerTest extends TestCase
         $this->mailer = new Mailer($this->delegate, $this->dispatcher);
     }
 
-    public function testSetAdapter()
+    public function testSetHttpClient()
     {
-        $adapter = $this->getMockBuilder('Stampie\Adapter\AdapterInterface')->getMock();
+        $httpClient = $this->getMockBuilder('Http\Client\HttpClient')->getMock();
 
         $this->delegate->expects($this->once())
-            ->method('setAdapter')
-            ->with($this->equalTo($adapter));
+            ->method('setHttpClient')
+            ->with($this->equalTo($httpClient));
 
-        $this->mailer->setAdapter($adapter);
-    }
-
-    public function testGetAdapter()
-    {
-        $adapter = $this->getMockBuilder('Stampie\Adapter\AdapterInterface')->getMock();
-
-        $this->delegate->expects($this->once())
-            ->method('getAdapter')
-            ->will($this->returnValue($adapter));
-
-        $this->assertSame($adapter, $this->mailer->getAdapter());
+        $this->mailer->setHttpClient($httpClient);
     }
 
     public function testSetServerToken()

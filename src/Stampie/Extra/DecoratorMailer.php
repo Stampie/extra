@@ -2,9 +2,9 @@
 
 namespace Stampie\Extra;
 
+use Http\Client\HttpClient;
 use Stampie\MailerInterface;
 use Stampie\MessageInterface;
-use Stampie\Adapter\AdapterInterface;
 
 /**
  * base MailerInterface decorator without extra logic.
@@ -31,22 +31,6 @@ class DecoratorMailer implements MailerInterface
     /**
      * {@inheritDoc}
      */
-    public function setAdapter(AdapterInterface $adapter)
-    {
-        $this->delegate->setAdapter($adapter);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAdapter()
-    {
-        return $this->delegate->getAdapter();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setServerToken($serverToken)
     {
         $this->delegate->setServerToken($serverToken);
@@ -58,5 +42,13 @@ class DecoratorMailer implements MailerInterface
     public function getServerToken()
     {
         return $this->delegate->getServerToken();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setHttpClient(HttpClient $adapter)
+    {
+        $this->delegate->setHttpClient($adapter);
     }
 }
