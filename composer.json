@@ -11,13 +11,13 @@
         }
     ],
     "autoload" : {
-        "psr-0" : {
-            "Stampie\\Extra": "src/"
+        "psr-4" : {
+            "Stampie\\Extra\\": "src/"
         }
     },
     "autoload-dev" : {
-        "psr-0" : {
-            "Stampie\\Extra\\": "tests/"
+        "psr-4" : {
+            "Stampie\\Extra\\Tests\\": "tests/"
         }
     },
     "require" : {
