@@ -22,7 +22,7 @@
     },
     "minimum-stability": "dev",
     "require" : {
-        "php": ">=5.3.3",
+        "php": ">=5.5",
         "stampie/stampie": "^1.0",
         "symfony/event-dispatcher": "^2.3 || ^3.0"
     },
@@ -37,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
