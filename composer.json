@@ -1,7 +1,7 @@
 {
-    "name" : "stof/stampie-extra",
+    "name" : "stampie/extra",
     "description" : "Event-based plugin for stampie/stampie",
-    "homepage" : "https://github.com/stof/StampieExtra",
+    "homepage" : "https://github.com/Stampie/extra",
     "type" : "library",
     "license" : "MIT",
     "authors" : [
@@ -20,10 +20,9 @@
             "Stampie\\Extra\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
     "require" : {
         "php": ">=5.5",
-        "stampie/stampie": "^1.0",
+        "stampie/stampie": "^1.0@dev",
         "symfony/event-dispatcher": "^2.3 || ^3.0"
     },
     "require-dev": {
@@ -31,6 +30,9 @@
         "php-http/mock-client": "^1.0",
         "psr/log": "^1.0",
         "symfony/phpunit-bridge": "^3.2"
+    },
+    "conflict": {
+        "stof/stampie-extra": "*"
     },
     "suggest": {
         "psr/log": "to log sent emails to a LoggerInterface"
