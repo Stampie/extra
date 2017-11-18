@@ -2,10 +2,11 @@
 
 namespace Stampie\Extra\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Stampie\Extra\Mailer;
 use Stampie\Extra\StampieEvents;
 
-class MailerTest extends \PHPUnit_Framework_TestCase
+class MailerTest extends TestCase
 {
     /**
      * @var Mailer
@@ -24,14 +25,14 @@ class MailerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->delegate = $this->getMock('Stampie\MailerInterface');
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->delegate = $this->getMockBuilder('Stampie\MailerInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
         $this->mailer = new Mailer($this->delegate, $this->dispatcher);
     }
 
     public function testSetAdapter()
     {
-        $adapter = $this->getMock('Stampie\Adapter\AdapterInterface');
+        $adapter = $this->getMockBuilder('Stampie\Adapter\AdapterInterface')->getMock();
 
         $this->delegate->expects($this->once())
             ->method('setAdapter')
@@ -42,7 +43,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAdapter()
     {
-        $adapter = $this->getMock('Stampie\Adapter\AdapterInterface');
+        $adapter = $this->getMockBuilder('Stampie\Adapter\AdapterInterface')->getMock();
 
         $this->delegate->expects($this->once())
             ->method('getAdapter')
@@ -75,7 +76,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
 
     public function testSend()
     {
-        $message = $this->getMock('Stampie\MessageInterface');
+        $message = $this->getMockBuilder('Stampie\MessageInterface')->getMock();
 
         $this->delegate->expects($this->once())
             ->method('send')
