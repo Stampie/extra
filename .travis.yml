@@ -6,19 +6,18 @@ php:
     - 5.6
     - 7.0
     - 7.1
-    - hhvm
+    - 7.2
+    - nightly
 
 matrix:
     include:
         - php: 5.3
           dist: precise
-        - php: 5.3
-          dist: precise
+        - php: 5.6
           env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable' SYMFONY_DEPRECATIONS_HELPER=weak
         - php: 7.1
           env: DEPENDENCIES=dev SYMFONY_DEPRECATIONS_HELPER=weak
     allow_failures:
-        - php: hhvm
         - php: nightly
 
 sudo: false
@@ -28,7 +27,7 @@ cache:
         - $HOME/.composer/cache/files
 
 before_install:
-    - if [ "$DEPENDENCIES" = "dev" ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/' composer.json; fi;
+    - if [ "$DEPENDENCIES" = "dev" ]; then composer config minimum-stability dev; fi;
 
 install: composer update --prefer-dist $COMPOSER_FLAGS
 
