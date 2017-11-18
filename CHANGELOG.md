@@ -1,7 +1,8 @@
 ## 1.0.0
 
 * Renamed the composer package to `stampie/extra`
-* Bump the Stampie min version to 1.0
+* Bumped the Stampie min version to 1.0
+* Added support for Symfony 4
 
 ## 0.3.0
 
