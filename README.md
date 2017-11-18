@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/stof/StampieExtra.png)](http://travis-ci.org/stof/StampieExtra)
 
-StampieExtra provides an event-based extension point for [Stampie](https://github.com/henrikbjorn/Stampie).
+StampieExtra provides an event-based extension point for [Stampie](https://github.com/Stampie/Stampie).
 It uses the Symfony2 EventDispatcher component.
 
 ## Usage
@@ -13,11 +13,11 @@ in the sendign process.
 ```php
 <?php
 
-// include the Composr autoloading
+// include the Composer autoloading
 require 'vendor/autoload.php';
 
-$adapter = new Stampie\Adapter\Buzz(new Buzz\Browser());
-$innerMailer = new Stampie\Mailer\SendGrid($adapter, 'username:password');
+$httpClient = new Http\Adapter\Guzzle6\Client();
+$innerMailer = new Stampie\Mailer\SendGrid($httpClient, 'username:password');
 
 $dispatcher = new Symfony\Component\EventDispatcher\EventDispatcher();
 $mailer = new Stampie\Extra\Mailer($innerMailer, $dispatcher);

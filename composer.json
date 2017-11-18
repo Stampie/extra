@@ -1,6 +1,6 @@
 {
     "name" : "stof/stampie-extra",
-    "description" : "Event-based plugin for henrikbjorn/stampie",
+    "description" : "Event-based plugin for stampie/stampie",
     "homepage" : "https://github.com/stof/StampieExtra",
     "type" : "library",
     "license" : "MIT",
@@ -22,12 +22,13 @@
     },
     "minimum-stability": "dev",
     "require" : {
-        "php": ">=5.3.3",
-        "henrikbjorn/stampie": "~0.10",
+        "php": ">=5.5",
+        "stampie/stampie": "^1.0",
         "symfony/event-dispatcher": "^2.3 || ^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.1",
+        "php-http/mock-client": "^1.0",
         "psr/log": "^1.0",
         "symfony/phpunit-bridge": "^3.2"
     },
@@ -36,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
