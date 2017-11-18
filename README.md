@@ -1,14 +1,14 @@
-# Stampie
+# Stampie Extra
 
-[![Build Status](https://secure.travis-ci.org/stof/StampieExtra.png)](http://travis-ci.org/stof/StampieExtra)
+[![Build Status](https://travis-ci.org/Stampie/extra.svg)](https://travis-ci.org/Stampie/extra)
 
 StampieExtra provides an event-based extension point for [Stampie](https://github.com/Stampie/Stampie).
-It uses the Symfony2 EventDispatcher component.
+It uses the Symfony EventDispatcher component.
 
 ## Usage
 
-The StampieExtra mailer wraps your Stampie mailer to provides extension points
-in the sendign process.
+The Stampie Extra mailer wraps your Stampie mailer to provides extension points
+in the sending process.
 
 ```php
 <?php
@@ -40,18 +40,18 @@ development to send all messages to a single email address. It will add a
 
 ```php
 <?php
-$dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\ImpersonateListener('stof@notk.org'));
+$dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\ImpersonateListener('stampie@example.com'));
 ```
 
 ### LoggerListener
 
 The LoggerListener allows you to log sent emails. It expects a logger implementing
-the Symfony2 LoggerInterface.
+the PSR-3 LoggerInterface.
 
 ```php
 <?php
 // create a listener and configure it
-$logger = new Symfony\Bridge\Monolog\Logger('stampie');
+$logger = new Monolog\Logger('stampie');
 // ...
 
 $dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\LoggerListener($logger));
@@ -59,7 +59,7 @@ $dispatcher->addEventSubscriber(new Stampie\Extra\EventListener\LoggerListener($
 
 ## SpoolMailer
 
-StampieExtra also provides a SpoolMailer storing the messages in memory and
+Stampie Extra also provides a SpoolMailer storing the messages in memory and
 sending them when flushing the queue.
 
 ```php
@@ -79,5 +79,5 @@ $spoolMailer->flushQueue();
 
 ## Testing
 
-StampieExtra is [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration)
-tested with [Travis](http://travis-ci.org) and aims for a high coverage percentage.
+Stampie Extra is [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration)
+tested with [Travis](https://travis-ci.org) and aims for a high coverage percentage.

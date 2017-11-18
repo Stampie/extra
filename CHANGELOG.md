@@ -1,3 +1,8 @@
+## 1.0.0
+
+* Renamed the composer package to `stampie/extra`
+* Bump the Stampie min version to 1.0
+
 ## 0.3.0
 
 * Switch to PSR-3 for the logger listener rather than the deprecated Symfony logger
