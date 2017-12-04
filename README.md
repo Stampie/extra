@@ -74,7 +74,7 @@ $spoolMailer->send($message);
 // Do some logic, for instance flushing the response to the user
 
 // Flush the queue, sending the message with the inner mailer
-$spoolMailer->flushQueue();
+$spoolMailer->flushSpool();
 ```
 
 ## Testing

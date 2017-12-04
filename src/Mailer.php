@@ -12,14 +12,15 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class Mailer extends DecoratorMailer
+class Mailer implements MailerInterface
 {
+    private $delegate;
+
     private $dispatcher;
 
     public function __construct(MailerInterface $delegate, EventDispatcherInterface $dispatcher)
     {
-        parent::__construct($delegate);
-
+        $this->delegate = $delegate;
         $this->dispatcher = $dispatcher;
     }
 
@@ -31,6 +32,6 @@ class Mailer extends DecoratorMailer
         $event = new MessageEvent($message);
         $this->dispatcher->dispatch(StampieEvents::PRE_SEND, $event);
 
-        return parent::send($event->getMessage());
+        $this->delegate->send($event->getMessage());
     }
 }
