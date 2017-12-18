@@ -30,39 +30,6 @@ class MailerTest extends TestCase
         $this->mailer = new Mailer($this->delegate, $this->dispatcher);
     }
 
-    public function testSetHttpClient()
-    {
-        $httpClient = $this->getMockBuilder('Http\Client\HttpClient')->getMock();
-
-        $this->delegate->expects($this->once())
-            ->method('setHttpClient')
-            ->with($this->equalTo($httpClient));
-
-        $this->mailer->setHttpClient($httpClient);
-    }
-
-    public function testSetServerToken()
-    {
-        $token = 'foo';
-
-        $this->delegate->expects($this->once())
-            ->method('setServerToken')
-            ->with($this->equalTo($token));
-
-        $this->mailer->setServerToken($token);
-    }
-
-    public function testGetServerToken()
-    {
-        $token = 'foo';
-
-        $this->delegate->expects($this->once())
-            ->method('getServerToken')
-            ->will($this->returnValue($token));
-
-        $this->assertSame($token, $this->mailer->getServerToken());
-    }
-
     public function testSend()
     {
         $message = $this->getMockBuilder('Stampie\MessageInterface')->getMock();
@@ -76,6 +43,6 @@ class MailerTest extends TestCase
             ->method('dispatch')
             ->with($this->equalTo(StampieEvents::PRE_SEND), $this->isInstanceOf('Stampie\Extra\Event\MessageEvent'));
 
-        $this->assertTrue($this->mailer->send($message));
+        $this->mailer->send($message);
     }
 }

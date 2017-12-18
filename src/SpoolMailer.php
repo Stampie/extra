@@ -2,6 +2,7 @@
 
 namespace Stampie\Extra;
 
+use Stampie\MailerInterface;
 use Stampie\MessageInterface;
 
 /**
@@ -9,9 +10,16 @@ use Stampie\MessageInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class SpoolMailer extends DecoratorMailer
+class SpoolMailer implements MailerInterface
 {
+    private $delegate;
+
     private $messages = array();
+
+    public function __construct(MailerInterface $delegate)
+    {
+        $this->delegate = $delegate;
+    }
 
     /**
      * {@inheritDoc}
@@ -19,8 +27,6 @@ class SpoolMailer extends DecoratorMailer
     public function send(MessageInterface $message)
     {
         $this->messages[] = $message;
-
-        return true;
     }
 
     /**
@@ -29,7 +35,7 @@ class SpoolMailer extends DecoratorMailer
     public function flushSpool()
     {
         while ($message = array_pop($this->messages)) {
-            parent::send($message);
+            $this->delegate->send($message);
         }
     }
 }

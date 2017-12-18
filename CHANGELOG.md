@@ -3,6 +3,7 @@
 * Renamed the composer package to `stampie/extra`
 * Bumped the Stampie min version to 1.0
 * Added support for Symfony 4
+* Removed `DecoratorMailer`.
 
 ## 0.3.0
 
