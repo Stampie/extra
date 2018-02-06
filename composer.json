@@ -22,7 +22,7 @@
     },
     "require" : {
         "php": "^5.5 || ^7.0",
-        "stampie/stampie": "^1.0@dev",
+        "stampie/stampie": "^1.0@beta",
         "symfony/event-dispatcher": "^2.3 || ^3.0 || ^4.0"
     },
     "require-dev": {
