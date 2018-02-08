@@ -28,23 +28,21 @@ class ImpersonateMessage extends Decorator
 
     public function getCc()
     {
-        return null;
     }
 
     public function getBcc()
     {
-        return null;
     }
 
     public function getHeaders()
     {
         return array_merge(
             $this->delegate->getHeaders(),
-            array(
-                'X-Stampie-To' => IdentityUtils::buildIdentityString($this->delegate->getTo()),
-                'X-Stampie-Cc' => IdentityUtils::buildIdentityString($this->delegate->getCc()),
+            [
+                'X-Stampie-To'  => IdentityUtils::buildIdentityString($this->delegate->getTo()),
+                'X-Stampie-Cc'  => IdentityUtils::buildIdentityString($this->delegate->getCc()),
                 'X-Stampie-Bcc' => IdentityUtils::buildIdentityString($this->delegate->getBcc()),
-            )
+            ]
         );
     }
 }

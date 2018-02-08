@@ -3,8 +3,8 @@
 namespace Stampie\Extra\EventListener;
 
 use Psr\Log\LoggerInterface;
-use Stampie\Extra\StampieEvents;
 use Stampie\Extra\Event\MessageEvent;
+use Stampie\Extra\StampieEvents;
 use Stampie\Util\IdentityUtils;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -21,13 +21,13 @@ class LoggerListener implements EventSubscriberInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             StampieEvents::PRE_SEND => 'preSend',
-        );
+        ];
     }
 
     public function preSend(MessageEvent $event)
@@ -40,7 +40,7 @@ class LoggerListener implements EventSubscriberInterface
 
         $this->logger->debug(
             sprintf('Sending an email from "%s" to "%s"', IdentityUtils::buildIdentityString($message->getFrom()), IdentityUtils::buildIdentityString($message->getTo())),
-            array('subject' => $message->getSubject(), 'headers' => $message->getHeaders())
+            ['subject' => $message->getSubject(), 'headers' => $message->getHeaders()]
         );
     }
 }
