@@ -20,11 +20,11 @@ class ImpersonateListener implements EventSubscriberInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getSubscribedEvents()
     {
-        return array(StampieEvents::PRE_SEND => 'preSend');
+        return [StampieEvents::PRE_SEND => 'preSend'];
     }
 
     public function preSend(MessageEvent $event)

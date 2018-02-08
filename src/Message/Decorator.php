@@ -2,10 +2,10 @@
 
 namespace Stampie\Extra\Message;
 
-use Stampie\MessageInterface;
 use Stampie\Message\AttachmentsAwareInterface;
 use Stampie\Message\MetadataAwareInterface;
 use Stampie\Message\TaggableInterface;
+use Stampie\MessageInterface;
 
 /**
  * MessageInterface decorator proxying all calls without extra logic.
@@ -24,7 +24,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getFrom()
     {
@@ -32,7 +32,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTo()
     {
@@ -40,7 +40,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCc()
     {
@@ -48,7 +48,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getBcc()
     {
@@ -56,7 +56,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSubject()
     {
@@ -64,7 +64,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getReplyTo()
     {
@@ -72,7 +72,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHeaders()
     {
@@ -80,7 +80,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getHtml()
     {
@@ -88,7 +88,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getText()
     {
@@ -96,7 +96,7 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTag()
     {
@@ -104,11 +104,11 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
             return $this->delegate->getTag();
         }
 
-        return array();
+        return [];
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMetadata()
     {
@@ -116,11 +116,11 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
             return $this->delegate->getMetadata();
         }
 
-        return array();
+        return [];
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAttachments()
     {
@@ -128,6 +128,6 @@ class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInt
             return $this->delegate->getAttachments();
         }
 
-        return array();
+        return [];
     }
 }

@@ -8,7 +8,7 @@ use Stampie\MessageInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * MailerInterface decorator dispatching events
+ * MailerInterface decorator dispatching events.
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
@@ -25,7 +25,7 @@ class Mailer implements MailerInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function send(MessageInterface $message)
     {
