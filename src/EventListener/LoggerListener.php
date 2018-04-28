@@ -3,6 +3,7 @@
 namespace Stampie\Extra\EventListener;
 
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 use Stampie\Extra\Event\MessageEvent;
 use Stampie\Extra\StampieEvents;
 use Stampie\Util\IdentityUtils;
@@ -15,9 +16,12 @@ class LoggerListener implements EventSubscriberInterface
 {
     private $logger;
 
-    public function __construct(LoggerInterface $logger = null)
+    private $logLevel;
+
+    public function __construct(LoggerInterface $logger = null, $logLevel = LogLevel::DEBUG)
     {
         $this->logger = $logger;
+        $this->logLevel = $logLevel;
     }
 
     /**
@@ -38,7 +42,8 @@ class LoggerListener implements EventSubscriberInterface
 
         $message = $event->getMessage();
 
-        $this->logger->debug(
+        $this->logger->log(
+            $this->logLevel,
             sprintf('Sending an email from "%s" to "%s"', IdentityUtils::buildIdentityString($message->getFrom()), IdentityUtils::buildIdentityString($message->getTo())),
             ['subject' => $message->getSubject(), 'headers' => $message->getHeaders()]
         );
