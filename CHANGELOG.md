@@ -4,6 +4,7 @@
 * Bumped the Stampie min version to 1.0
 * Added support for Symfony 4
 * Removed `DecoratorMailer`.
+* Made the log level configurable in the LoggerListener
 
 ## 0.3.0
 
