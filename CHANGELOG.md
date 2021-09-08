@@ -1,5 +1,10 @@
 ## Unreleased
 
+### Changed
+
+* Changed the parent class of the `MessageEvent` to `Symfony\Contracts\EventDispatcher\Event` when using `symfony/event-dispatcher` 4.3+
+* Support the new `symfony/event-dispatcher` 4.3+ signature
+
 ### Removed
 
 * Removed support for PHP <7.2
