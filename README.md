@@ -1,6 +1,6 @@
 # Stampie Extra
 
-[![Build Status](https://travis-ci.org/Stampie/extra.svg?branch=master)](https://travis-ci.org/Stampie/extra)
+[![CI](https://github.com/Stampie/extra/actions/workflows/ci.yaml/badge.svg)](https://github.com/Stampie/extra/actions/workflows/ci.yaml)
 
 StampieExtra provides an event-based extension point for [Stampie](https://github.com/Stampie/Stampie).
 It uses the Symfony EventDispatcher component.
