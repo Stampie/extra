@@ -1,3 +1,9 @@
+## Unreleased
+
+### Removed
+
+* Removed support for PHP <7.2
+
 ## 1.0.0
 
 * Renamed the composer package to `stampie/extra`
