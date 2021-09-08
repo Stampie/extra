@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.1.0
+
 ### Added
 
 * Added support for Symfony 5
