@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Added
+
+* Added support for Symfony 5
+
 ### Changed
 
 * Changed the parent class of the `MessageEvent` to `Symfony\Contracts\EventDispatcher\Event` when using `symfony/event-dispatcher` 4.3+
