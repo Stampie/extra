@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Changed
+
+* Support the new `symfony/event-dispatcher` 4.3+ signature
+
 ### Removed
 
 * Removed support for PHP <7.2
