@@ -30,7 +30,8 @@
         "phpunit/phpunit": "^8.5.20 || ^9.5.9",
         "php-http/mock-client": "^1.0",
         "psr/log": "^1.0 || ^2.0 || ^3.0",
-        "symfony/phpunit-bridge": "^5.4"
+        "symfony/error-handler": "^4.4 || ^5.4 || ^6.0",
+        "symfony/phpunit-bridge": "^5.4 || ^6.0"
     },
     "conflict": {
         "stof/stampie-extra": "*"

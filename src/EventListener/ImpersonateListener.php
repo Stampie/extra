@@ -21,6 +21,8 @@ class ImpersonateListener implements EventSubscriberInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return array
      */
     public static function getSubscribedEvents()
     {
