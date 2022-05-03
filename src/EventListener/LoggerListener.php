@@ -11,6 +11,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Listener responsible to log the sent emails.
+ *
+ * @final
  */
 class LoggerListener implements EventSubscriberInterface
 {

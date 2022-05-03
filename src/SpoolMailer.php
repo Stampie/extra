@@ -9,6 +9,8 @@ use Stampie\MessageInterface;
  * MailerInterface decorator spooling messages in memory.
  *
  * @author Christophe Coevoet <stof@notk.org>
+ *
+ * @final
  */
 class SpoolMailer implements MailerInterface
 {
