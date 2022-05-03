@@ -23,7 +23,7 @@
     "require" : {
         "php": "^7.2 || ^8.0",
         "stampie/stampie": "^1.0",
-        "symfony/event-dispatcher": "^4.4 || ^5.4",
+        "symfony/event-dispatcher": "^4.4 || ^5.4  || ^6.0",
         "symfony/event-dispatcher-contracts": "^1.1 || ^2.5 || ^3.0"
     },
     "require-dev": {
