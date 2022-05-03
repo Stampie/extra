@@ -16,6 +16,9 @@ use Stampie\MessageInterface;
  */
 class Decorator implements MessageInterface, TaggableInterface, MetadataAwareInterface, AttachmentsAwareInterface
 {
+    /**
+     * @var MessageInterface
+     */
     protected $delegate;
 
     public function __construct(MessageInterface $delegate)
