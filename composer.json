@@ -23,13 +23,14 @@
     "require" : {
         "php": "^7.2 || ^8.0",
         "stampie/stampie": "^1.0",
-        "symfony/event-dispatcher": "^2.3 || ^3.0 || ^4.0 || ^5.0"
+        "symfony/event-dispatcher": "^4.4 || ^5.4",
+        "symfony/event-dispatcher-contracts": "^1.1 || ^2.5 || ^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5.20 || ^9.5.9",
         "php-http/mock-client": "^1.0",
         "psr/log": "^1.0",
-        "symfony/phpunit-bridge": "^5.3"
+        "symfony/phpunit-bridge": "^5.4"
     },
     "conflict": {
         "stof/stampie-extra": "*"

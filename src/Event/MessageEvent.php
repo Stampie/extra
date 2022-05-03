@@ -8,7 +8,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
 
-if (class_exists(Event::class) && is_subclass_of(EventDispatcherInterface::class, ContractsEventDispatcherInterface::class)) {
+// On Symfony 4.4, use the legacy event as the base class for BC reasons.
+if (is_subclass_of(EventDispatcherInterface::class, ContractsEventDispatcherInterface::class)) {
     class_alias(Event::class, BaseEvent::class);
 } else {
     class_alias(LegacyEvent::class, BaseEvent::class);
