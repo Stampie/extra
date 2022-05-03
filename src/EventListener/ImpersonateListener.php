@@ -8,7 +8,9 @@ use Stampie\Extra\StampieEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * Listener responsible to update the total of points of a user.
+ * Listener responsible to update the recipient of the message.
+ *
+ * @final
  */
 class ImpersonateListener implements EventSubscriberInterface
 {

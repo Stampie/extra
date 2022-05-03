@@ -11,6 +11,8 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
  * MailerInterface decorator dispatching events.
  *
  * @author Christophe Coevoet <stof@notk.org>
+ *
+ * @final
  */
 class Mailer implements MailerInterface
 {

@@ -17,6 +17,8 @@ if (is_subclass_of(EventDispatcherInterface::class, ContractsEventDispatcherInte
 
 /**
  * @author Christophe Coevoet <stof@notk.org>
+ *
+ * @final
  */
 class MessageEvent extends BaseEvent
 {

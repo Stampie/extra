@@ -9,6 +9,9 @@ use Stampie\Util\IdentityUtils;
  * MessageInterface decorator changing the recipient.
  *
  * @author Christophe Coevoet <stof@notk.org>
+ *
+ * @internal
+ * @final
  */
 class ImpersonateMessage extends Decorator
 {
