@@ -1,5 +1,20 @@
 ## Unreleased
 
+## 1.3.0
+
+### Added
+
+* Added support for Symfony 6
+* Added a CI job on PHP 8.1
+
+### Changed
+
+* Added `@final` and `@internal` on classes as appropriate
+
+### Removed
+
+* Removed support for Symfony <4.4 and Symfony 5 <5.4
+
 ## 1.2.0
 
 ### Added
